@@ -1,0 +1,536 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>{% block title %} {% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
+        <meta content="Themesbrand" name="author">
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+
+        <link href="{% static 'assets/libs/chartist/chartist.min.css' %}" rel="stylesheet">
+
+        <!-- Bootstrap Css -->
+        <link href="{% static 'assets/css/bootstrap.min.css' %}" id="bootstrap-style" rel="stylesheet" type="text/css">
+        <!-- Icons Css -->
+        <link href="{% static 'assets/css/icons.min.css' %}" rel="stylesheet" type="text/css">
+        <!-- App Css-->
+        <link href="{% static 'assets/css/app.min.css' %}" id="app-style" rel="stylesheet" type="text/css">
+
+    </head>
+
+    <body data-sidebar="dark">
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+
+            <header id="page-topbar">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <!-- LOGO -->
+                        <div class="navbar-brand-box">
+                            <a href="/" class="logo logo-dark">
+                                <span class="logo-sm">
+                                    <img src="{% static 'assets/images/logo-sm.png' %}" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="{% static 'assets/images/logo-dark.png' %}" alt="" height="17">
+                                </span>
+                            </a>
+
+                            <a href="/" class="logo logo-light">
+                                <span class="logo-sm">
+                                    <img src="{% static 'assets/images/logo-sm.png' %}" alt="" height="22">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="{% static 'assets/images/logo-light.png' %}" alt="" height="18">
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="vertical-menu">
+
+                <div data-simplebar class="h-100">
+
+                    <!--- Sidemenu -->
+                    <div id="sidebar-menu">
+                        <!-- Left Menu Start -->
+                        <ul class="metismenu list-unstyled" id="side-menu">
+                            <li class="menu-title">Main</li>
+                            <li>
+                                <a href="/" class="waves-effect">
+                                    <i class="ti-home"></i><span class="badge rounded-pill bg-primary float-end"></span>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Sidebar -->
+                </div>
+            </div>
+            <!-- Left Sidebar End -->
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="page-title-box">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">
+                                    <h6 class="page-title">Dashboard</h6>
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item active">Welcome to Veltrix Dashboard</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card mini-stat bg-primary text-white">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <div class="float-start mini-stat-img me-4">
+                                                <img src="{% static 'assets/images/services-icon/01.png' %}" alt="">
+                                            </div>
+                                            <h5 class="font-size-16 text-uppercase text-white-50">Orders</h5>
+                                            <h4 class="fw-medium font-size-24">1,685 <i
+                                                    class="mdi mdi-arrow-up text-success ms-2"></i></h4>
+                                            <div class="mini-stat-label bg-success">
+                                                <p class="mb-0">+ 12%</p>
+                                            </div>
+                                        </div>
+                                        <div class="pt-2">
+                                            <div class="float-end">
+                                                <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5 text-white-50"></i></a>
+                                            </div>
+
+                                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card mini-stat bg-primary text-white">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <div class="float-start mini-stat-img me-4">
+                                                <img src="{% static 'assets/images/services-icon/02.png' %}" alt="">
+                                            </div>
+                                            <h5 class="font-size-16 text-uppercase text-white-50">Revenue</h5>
+                                            <h4 class="fw-medium font-size-24">52,368 <i
+                                                    class="mdi mdi-arrow-down text-danger ms-2"></i></h4>
+                                            <div class="mini-stat-label bg-danger">
+                                                <p class="mb-0">- 28%</p>
+                                            </div>
+                                        </div>
+                                        <div class="pt-2">
+                                            <div class="float-end">
+                                                <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5 text-white-50"></i></a>
+                                            </div>
+
+                                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card mini-stat bg-primary text-white">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <div class="float-start mini-stat-img me-4">
+                                                <img src="{% static 'assets/images/services-icon/03.png' %}" alt="">
+                                            </div>
+                                            <h5 class="font-size-16 text-uppercase text-white-50">Average Price</h5>
+                                            <h4 class="fw-medium font-size-24">15.8 <i
+                                                    class="mdi mdi-arrow-up text-success ms-2"></i></h4>
+                                            <div class="mini-stat-label bg-info">
+                                                <p class="mb-0"> 00%</p>
+                                            </div>
+                                        </div>
+                                        <div class="pt-2">
+                                            <div class="float-end">
+                                                <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5 text-white-50"></i></a>
+                                            </div>
+
+                                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card mini-stat bg-primary text-white">
+                                    <div class="card-body">
+                                        <div class="mb-4">
+                                            <div class="float-start mini-stat-img me-4">
+                                                <img src="{% static 'assets/images/services-icon/04.png' %}" alt="">
+                                            </div>
+                                            <h5 class="font-size-16 text-uppercase text-white-50">Product Sold</h5>
+                                            <h4 class="fw-medium font-size-24">2436 <i
+                                                    class="mdi mdi-arrow-up text-success ms-2"></i></h4>
+                                            <div class="mini-stat-label bg-warning">
+                                                <p class="mb-0">+ 84%</p>
+                                            </div>
+                                        </div>
+                                        <div class="pt-2">
+                                            <div class="float-end">
+                                                <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5 text-white-50"></i></a>
+                                            </div>
+
+                                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-xl-9">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-4">Monthly Earning</h4>
+                                        <div class="row">
+                                            <div class="col-lg-7">
+                                                <div>
+                                                    <div id="chart-with-area" class="ct-chart earning ct-golden-section">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="text-center">
+                                                            <p class="text-muted mb-4">This month</p>
+                                                            <h3>$34,252</h3>
+                                                            <p class="text-muted mb-5">It will be as simple as in fact it
+                                                                will be occidental.</p>
+                                                            <span class="peity-donut"
+                                                                data-peity='{ "fill": ["#02a499", "#f2f2f2"], "innerRadius": 28, "radius": 32 }'
+                                                                data-width="72" data-height="72">4/5</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="text-center">
+                                                            <p class="text-muted mb-4">Last month</p>
+                                                            <h3>$36,253</h3>
+                                                            <p class="text-muted mb-5">It will be as simple as in fact it
+                                                                will be occidental.</p>
+                                                            <span class="peity-donut"
+                                                                data-peity='{ "fill": ["#02a499", "#f2f2f2"], "innerRadius": 28, "radius": 32 }'
+                                                                data-width="72" data-height="72">3/5</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end row -->
+                                    </div>
+                                </div>
+                                <!-- end card -->
+                            </div>
+
+                            <div class="col-xl-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div>
+                                            <h4 class="card-title mb-4">Sales Analytics</h4>
+                                        </div>
+                                        <div class="wid-peity mb-4">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div>
+                                                        <p class="text-muted">Online</p>
+                                                        <h5 class="mb-4">1,542</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-4">
+                                                        <span class="peity-line" data-width="100%"
+                                                            data-peity='{ "fill": ["rgba(2, 164, 153,0.3)"],"stroke": ["rgba(2, 164, 153,0.8)"]}'
+                                                            data-height="60">6,2,8,4,3,8,1,3,6,5,9,2,8,1,4,8,9,8,2,1</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wid-peity mb-4">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div>
+                                                        <p class="text-muted">Offline</p>
+                                                        <h5 class="mb-4">6,451</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-4">
+                                                        <span class="peity-line" data-width="100%"
+                                                            data-peity='{ "fill": ["rgba(2, 164, 153,0.3)"],"stroke": ["rgba(2, 164, 153,0.8)"]}'
+                                                            data-height="60">6,2,8,4,-3,8,1,-3,6,-5,9,2,-8,1,4,8,9,8,2,1</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div>
+                                                        <p class="text-muted">Marketing</p>
+                                                        <h5>84,574</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-4">
+                                                        <span class="peity-line" data-width="100%"
+                                                            data-peity='{ "fill": ["rgba(2, 164, 153,0.3)"],"stroke": ["rgba(2, 164, 153,0.8)"]}'
+                                                            data-height="60">6,2,8,4,3,8,1,3,6,5,9,2,8,1,4,8,9,8,2,1</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                        <div class="row">
+                            <div class="col-xl-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-4">Latest Transaction</h4>
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-centered table-nowrap mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">(#) Id</th>
+                                                        <th scope="col">Name</th>
+                                                        <th scope="col">Date</th>
+                                                        <th scope="col">Amount</th>
+                                                        <th scope="col" colspan="2">Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">#14256</th>
+                                                        <td>
+                                                            <div>
+                                                                <img src="{% static 'assets/images/users/user-2.jpg' %}" alt=""
+                                                                    class="avatar-xs rounded-circle me-2"> Philip Smead
+                                                            </div>
+                                                        </td>
+                                                        <td>15/1/2018</td>
+                                                        <td>$94</td>
+                                                        <td><span class="badge bg-success">Delivered</span></td>
+                                                        <td>
+                                                            <div>
+                                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#14257</th>
+                                                        <td>
+                                                            <div>
+                                                                <img src="{% static 'assets/images/users/user-3.jpg' %}" alt=""
+                                                                    class="avatar-xs rounded-circle me-2"> Brent Shipley
+                                                            </div>
+                                                        </td>
+                                                        <td>16/1/2019</td>
+                                                        <td>$112</td>
+                                                        <td><span class="badge bg-warning">Pending</span></td>
+                                                        <td>
+                                                            <div>
+                                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#14258</th>
+                                                        <td>
+                                                            <div>
+                                                                <img src="{% static 'assets/images/users/user-4.jpg' %}" alt=""
+                                                                    class="avatar-xs rounded-circle me-2"> Robert Sitton
+                                                            </div>
+                                                        </td>
+                                                        <td>17/1/2019</td>
+                                                        <td>$116</td>
+                                                        <td><span class="badge bg-success">Delivered</span></td>
+                                                        <td>
+                                                            <div>
+                                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#14259</th>
+                                                        <td>
+                                                            <div>
+                                                                <img src="{% static 'assets/images/users/user-5.jpg' %}" alt=""
+                                                                    class="avatar-xs rounded-circle me-2"> Alberto Jackson
+                                                            </div>
+                                                        </td>
+                                                        <td>18/1/2019</td>
+                                                        <td>$109</td>
+                                                        <td><span class="badge bg-danger">Cancel</span></td>
+                                                        <td>
+                                                            <div>
+                                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#14260</th>
+                                                        <td>
+                                                            <div>
+                                                                <img src="{% static 'assets/images/users/user-6.jpg' %}" alt=""
+                                                                    class="avatar-xs rounded-circle me-2"> David Sanchez
+                                                            </div>
+                                                        </td>
+                                                        <td>19/1/2019</td>
+                                                        <td>$120</td>
+                                                        <td><span class="badge bg-success">Delivered</span></td>
+                                                        <td>
+                                                            <div>
+                                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">#14261</th>
+                                                        <td>
+                                                            <div>
+                                                                <img src="{% static 'assets/images/users/user-2.jpg' %}" alt=""
+                                                                    class="avatar-xs rounded-circle me-2"> Philip Smead
+                                                            </div>
+                                                        </td>
+                                                        <td>15/1/2018</td>
+                                                        <td>$94</td>
+                                                        <td><span class="badge bg-warning">Pending</span></td>
+                                                        <td>
+                                                            <div>
+                                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- end row -->
+
+
+
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+
+
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                © <script>document.write(new Date().getFullYear())</script> Veltrix<span class="d-none d-sm-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+        <!-- Right Sidebar -->
+        <div class="right-bar">
+            <div data-simplebar class="h-100">
+                <div class="rightbar-title px-3 py-4">
+                    <a href="javascript:void(0);" class="right-bar-toggle float-end">
+                        <i class="mdi mdi-close noti-icon"></i>
+                    </a>
+                    <h5 class="m-0">Settings</h5>
+                </div>
+
+                <!-- Settings -->
+                <hr class="mt-0" />
+                <h6 class="text-center">Choose Layouts</h6>
+
+                <div class="p-4">
+                    <div class="mb-2">
+                        <img src="{% static 'assets/images/layouts/layout-1.jpg' %}" class="img-fluid img-thumbnail" alt="">
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input type="checkbox" class="form-check-input theme-choice" id="light-mode-switch" checked />
+                        <label class="form-check-label" for="light-mode-switch">Light Mode</label>
+                    </div>
+
+                    <div class="mb-2">
+                        <img src="{% static 'assets/images/layouts/layout-2.jpg' %}" class="img-fluid img-thumbnail" alt="">
+                    </div>
+                    <div class="form-check form-switch mb-3">
+                        <input type="checkbox" class="form-check-input theme-choice" id="dark-mode-switch" data-bsStyle={% static 'assets/css/bootstrap-dark.min.css' %}"
+                            data-appStyle={% static 'assets/css/app-dark.min.css' %}" />
+                        <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
+                    </div>
+
+                    <div class="mb-2">
+                        <img src="{% static 'assets/images/layouts/layout-3.jpg' %}" class="img-fluid img-thumbnail" alt="">
+                    </div>
+                    <div class="form-check form-switch mb-5">
+                        <input type="checkbox" class="form-check-input theme-choice" id="rtl-mode-switch" data-appStyle={% static 'assets/css/app-rtl.min.css' %}" />
+                        <label class="form-check-label" for="rtl-mode-switch">RTL Mode</label>
+                    </div>
+                    <div class="d-grid">
+                        <a href="https://1.envato.market/grNDB" class="btn btn-primary mt-3" target="_blank"><i class="mdi mdi-cart me-1"></i> Purchase Now</a>
+                    </div>
+                </div>
+
+            </div> <!-- end slimscroll-menu-->
+        </div>
+        <!-- /Right-bar -->
+
+        <!-- Right bar overlay-->
+        <div class="rightbar-overlay"></div>
+
+                <!-- JAVASCRIPT -->
+                <script src="{% static 'assets/libs/jquery/jquery.min.js' %}"></script>
+                <script src="{% static 'assets/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+                <script src="{% static 'assets/libs/metismenu/metisMenu.min.js' %}"></script>
+                <script src="{% static 'assets/libs/simplebar/simplebar.min.js' %}"></script>
+                <script src="{% static 'assets/libs/node-waves/waves.min.js' %}"></script>
+
+
+        <!-- Peity chart-->
+        <script src="{% static 'assets/libs/peity/jquery.peity.min.js' %}"></script>
+
+        <!-- Plugin Js-->
+        <script src="{% static 'assets/libs/chartist/chartist.min.js' %}"></script>
+        <script src="{% static 'assets/libs/chartist-plugin-tooltips/chartist-plugin-tooltip.min.js' %}"></script>
+
+        <script src="{% static 'assets/js/pages/dashboard.init.js' %}"></script>
+
+        <!-- <script src="{% static 'assets/js/app.js' %}"></script> -->
+
+    </body>
+
+</html>
