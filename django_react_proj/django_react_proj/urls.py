@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 # from django_react_proj import main_part
 
 urlpatterns = [
+    path("__debug__/", include("debug_toolbar.urls")),
     path('admin/', admin.site.urls),
     path("", include("main_part.urls")),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

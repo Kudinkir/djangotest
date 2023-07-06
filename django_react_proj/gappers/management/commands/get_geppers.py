@@ -3,6 +3,7 @@ import requests
 import pandas as pd
 from datetime import datetime, timedelta
 import os
+from ...models import Gappers
 
 
 class Command(BaseCommand):
@@ -11,8 +12,6 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         dateFormat = '%Y-%m-%d'
         thisDir = os.path.realpath(__file__).replace(__file__, '')
-        print(os.path.realpath(__file__))
-        quit()
         targetDay = datetime.strftime(
             datetime.today() - timedelta(days=1), dateFormat)
 
@@ -23,8 +22,20 @@ class Command(BaseCommand):
             theDF = self.getTickers(increase, _from)
             theDF.columns = [
                 'ticker', 'open', 'close', 'high',
-                'low', 'vwap', 'volume', 'gap%', 'date'
+                'low', 'vwap', 'volume', 'gap', 'date'
             ]
+            for attr in theDF.iterrows():
+                Gappers.objects.create(
+                    ticker_name=attr[1][0],
+                    open=attr[1][1],
+                    close=attr[1][2],
+                    hight=attr[1][3],
+                    low=attr[1][4],
+                    vwap=attr[1][5],
+                    volume=attr[1][6],
+                    gap=attr[1][7],
+                    date=attr[1][8]
+                )
         except Exception as e:
             print('ERROR: pick a new _from date because ' + str(e))
             quit()
@@ -35,6 +46,7 @@ class Command(BaseCommand):
         idx = 1
         fails = 0
         passes = 1
+
         while current_day < end_day:
             date = datetime.strftime(current_day, dateFormat)
             try:
