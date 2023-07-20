@@ -8,9 +8,9 @@
         <div class="page-title-box">
             <div class="row align-items-center">
                 <div class="col-md-8">
-                    <h6 class="page-title">Dashboard</h6>
+                    <h6 class="page-title">Market breath</h6>
                     <ol class="breadcrumb m-0">
-                        <li class="breadcrumb-item active">Welcome to Veltrix Dashboard</li>
+                        <li class="breadcrumb-item active"><h4 class="card-title mb-4"> Ежедневно обновляемые показатели статуса американского рынка (10.000 акций)</h4></li>
                     </ol>
                 </div>
             </div>
@@ -20,96 +20,106 @@
         <div class="row">
             <div class="col-xl-3 col-md-6">
                 <div class="card mini-stat bg-primary text-white">
-                    <div class="card-body">
+                    <div class="card-body" style='min-height: 159px;'> 
                         <div class="mb-4">
                             <div class="float-start mini-stat-img me-4">
-                                <img src="{% static 'assets/images/services-icon/01.png' %}" alt="">
+				<span style='font-size: 1.5em; font-weight: bold'>+4%</span>
                             </div>
-                            <h5 class="font-size-16 text-uppercase text-white-50">Orders</h5>
-                            <h4 class="fw-medium font-size-24">1,685 <i
-                                    class="mdi mdi-arrow-up text-success ms-2"></i></h4>
+                            <h5 class="font-size-16 text-uppercase text-white-50">ВЧЕРА</h5>
+                            <h4 class="fw-medium font-size-24">{{ upperblocks.f1.0 }} <i
+                                    class="mdi 
+				{% if upperblocks.d12.0 >= 0 %} mdi-arrow-up text-success {% else %} mdi-arrow-down text-danger {% endif %}
+ ms-2"></i>&nbsp{{ upperblocks.f2.0 }}</h4>
                             <div class="mini-stat-label bg-success">
-                                <p class="mb-0">+ 12%</p>
+                                <p class="mb-0">{{ upperblocks.d12.0 }}%</p>
                             </div>
                         </div>
                         <div class="pt-2">
-                            <div class="float-end">
+                            <!--div class="float-end">
                                 <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5 text-white-50"></i></a>
-                            </div>
+                            </div-->
 
-                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
+                            <p style='font-size: 1.2em;' class="text-white-50 mb-0 mt-1">Количество акций CLOSE/OPEN &ge; 1.04</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card mini-stat bg-primary text-white">
-                    <div class="card-body">
+                    <div class="card-body" style='min-height: 159px;'>
                         <div class="mb-4">
                             <div class="float-start mini-stat-img me-4">
-                                <img src="{% static 'assets/images/services-icon/02.png' %}" alt="">
+				<span style='font-size: 1.5em; font-weight: bold'>-4%</span>
                             </div>
-                            <h5 class="font-size-16 text-uppercase text-white-50">Revenue</h5>
-                            <h4 class="fw-medium font-size-24">52,368 <i
-                                    class="mdi mdi-arrow-down text-danger ms-2"></i></h4>
+                            <h5 class="font-size-16 text-uppercase text-white-50">ВЧЕРА</h5>
+                            <h4 class="fw-medium font-size-24">{{ upperblocks.f3.0 }} <i
+                                    class="mdi 
+				{% if upperblocks.d34.0 >= 0 %} mdi-arrow-up text-success {% else %} mdi-arrow-down text-danger {% endif %}
+				     ms-2"></i>&nbsp{{ upperblocks.f4.0 }}</h4>
                             <div class="mini-stat-label bg-danger">
-                                <p class="mb-0">- 28%</p>
+                                <p class="mb-0">{{ upperblocks.d34.0 }}%</p>
                             </div>
                         </div>
                         <div class="pt-2">
-                            <div class="float-end">
+                            <!--div class="float-end">
                                 <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5 text-white-50"></i></a>
-                            </div>
+                            </div-->
 
-                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
+                            <p style='font-size: 1.2em;'class="text-white-50 mb-0 mt-1">Количество акций с падением &lt; 4%</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card mini-stat bg-primary text-white">
-                    <div class="card-body">
+                    <div class="card-body" style='min-height: 159px;'>
                         <div class="mb-4">
-                            <div class="float-start mini-stat-img me-4">
-                                <img src="{% static 'assets/images/services-icon/03.png' %}" alt="">
+			    <div class="margin:0px; padding:0px; float-start mini-stat-img me-4">
+				<div style="margin:-5px; padding:0px; font-size: 1.5em; font-weight: bold; text-align: center">+4%</div>
+				<div style="margin: -40px; padding:0px;font-size: 1.2em; font-weight: bold; text-align: center">vwap</div>
                             </div>
-                            <h5 class="font-size-16 text-uppercase text-white-50">Average Price</h5>
-                            <h4 class="fw-medium font-size-24">15.8 <i
-                                    class="mdi mdi-arrow-up text-success ms-2"></i></h4>
+                            <h5 class="font-size-16 text-uppercase text-white-50">&nbsp</h5>
+                            <h4 class="fw-medium font-size-24">{{ upperblocks.f5.0 }} <i
+                                    class="mdi 
+				{% if upperblocks.d56.0 >= 0 %} mdi-arrow-up text-success {% else %} mdi-arrow-down text-danger {% endif %}
+				ms-2"></i>&nbsp{{ upperblocks.f6.0 }}</h4>
                             <div class="mini-stat-label bg-info">
-                                <p class="mb-0"> 00%</p>
+                                <p class="mb-0">{{ upperblocks.d56.0 }}%</p>
                             </div>
                         </div>
                         <div class="pt-2">
-                            <div class="float-end">
+                            <!--div class="float-end">
                                 <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5 text-white-50"></i></a>
-                            </div>
+                            </div-->
 
-                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
+                            <p style='font-size: 1.2em;'class="text-white-50 mb-0 mt-1">СLOSE &ge; VWAP на 4%</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6">
                 <div class="card mini-stat bg-primary text-white">
-                    <div class="card-body">
+                    <div class="card-body" style='min-height: 159px;'>
                         <div class="mb-4">
-                            <div class="float-start mini-stat-img me-4">
-                                <img src="{% static 'assets/images/services-icon/04.png' %}" alt="">
+			    <div class="margin:0px; padding:0px; float-start mini-stat-img me-4">
+				<div style="margin:-5px; padding:0px; font-size: 1.5em; font-weight: bold; text-align: center">-4%</div>
+				<div style="margin: -40px; padding:0px;font-size: 1.2em; font-weight: bold; text-align: center">vwap</div>
                             </div>
-                            <h5 class="font-size-16 text-uppercase text-white-50">Product Sold</h5>
-                            <h4 class="fw-medium font-size-24">2436 <i
-                                    class="mdi mdi-arrow-up text-success ms-2"></i></h4>
+                            <h5 class="font-size-16 text-uppercase text-white-50">&nbsp</h5>
+                            <h4 class="fw-medium font-size-24">{{ upperblocks.f7.0 }} <i
+                                    class="mdi 
+				{% if  upperblocks.d78.0 >= 0 %} mdi-arrow-up text-success {% else %} mdi-arrow-down text-danger {% endif %}
+ ms-2"></i>&nbsp{{ upperblocks.f8.0 }}</h4>
                             <div class="mini-stat-label bg-warning">
-                                <p class="mb-0">+ 84%</p>
+                                <p class="mb-0">{{ upperblocks.d78.0 }}%</p>
                             </div>
                         </div>
                         <div class="pt-2">
-                            <div class="float-end">
+                            <!--div class="float-end">
                                 <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5 text-white-50"></i></a>
-                            </div>
+                            </div-->
 
-                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
+                            <p style='font-size: 1.2em;'class="text-white-50 mb-0 mt-1">СLOSE &lt; VWAP на 4%</p>
                         </div>
                     </div>
                 </div>
@@ -118,12 +128,12 @@
         <!-- end row -->
 
         <div class="row">
-            <div class="col-xl-9">
+            <div class="col-xl-12">
                 <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title mb-4">Monthly Earning</h4>
+                    <div class="card-body" >
+                        <h4 class="card-title mb-12">График количества гэпперов 20% за 90 календарных дней</h4>
                         <div class="row">
-                            <div class="col-lg-7">
+                            <div class="col-lg-12">
                                 <div>
                                     <div id="chart-with-area" class="ct-chart earning ct-golden-section">
                                     </div>
@@ -133,24 +143,22 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="text-center">
-                                            <p class="text-muted mb-4">This month</p>
-                                            <h3>$34,252</h3>
-                                            <p class="text-muted mb-5">It will be as simple as in fact it
-                                                will be occidental.</p>
+                                            <p class="text-muted mb-4">Вчера/неделя</p>
+                                            <h3>{{stock_counts.day.0}}/{{stock_counts.week.0}}</h3>
+                                            <p class="text-muted mb-5">Отношение количества гэпперов 25% вчера к последним 5 дням.</p>
                                             <span class="peity-donut"
                                                 data-peity='{ "fill": ["#02a499", "#f2f2f2"], "innerRadius": 28, "radius": 32 }'
-                                                data-width="72" data-height="72">4/5</span>
+                                                data-width="72" data-height="72">{{stock_counts.day.0}}/{{stock_counts.week.0}}</span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="text-center">
-                                            <p class="text-muted mb-4">Last month</p>
-                                            <h3>$36,253</h3>
-                                            <p class="text-muted mb-5">It will be as simple as in fact it
-                                                will be occidental.</p>
+                                            <p class="text-muted mb-4">Неделя/месяц</p>
+                                            <h3>{{stock_counts.week.0}}/{{stock_counts.month.0}}</h3>
+                                            <p class="text-muted mb-5">Отношение количества гэпперов 25% последней недели к месяцу.</p>
                                             <span class="peity-donut"
                                                 data-peity='{ "fill": ["#02a499", "#f2f2f2"], "innerRadius": 28, "radius": 32 }'
-                                                data-width="72" data-height="72">3/5</span>
+                                                data-width="72" data-height="72">{{stock_counts.week.0}}/{{stock_counts.month.0}}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -162,74 +170,19 @@
                 <!-- end card -->
             </div>
 
-            <div class="col-xl-3">
-                <div class="card">
-                    <div class="card-body">
-                        <div>
-                            <h4 class="card-title mb-4">Sales Analytics</h4>
-                        </div>
-                        <div class="wid-peity mb-4">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div>
-                                        <p class="text-muted">Online</p>
-                                        <h5 class="mb-4">1,542</h5>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-4">
-                                        <span class="peity-line" data-width="100%"
-                                            data-peity='{ "fill": ["rgba(2, 164, 153,0.3)"],"stroke": ["rgba(2, 164, 153,0.8)"]}'
-                                            data-height="60">6,2,8,4,3,8,1,3,6,5,9,2,8,1,4,8,9,8,2,1</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wid-peity mb-4">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div>
-                                        <p class="text-muted">Offline</p>
-                                        <h5 class="mb-4">6,451</h5>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-4">
-                                        <span class="peity-line" data-width="100%"
-                                            data-peity='{ "fill": ["rgba(2, 164, 153,0.3)"],"stroke": ["rgba(2, 164, 153,0.8)"]}'
-                                            data-height="60">6,2,8,4,-3,8,1,-3,6,-5,9,2,-8,1,4,8,9,8,2,1</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div>
-                                        <p class="text-muted">Marketing</p>
-                                        <h5>84,574</h5>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-4">
-                                        <span class="peity-line" data-width="100%"
-                                            data-peity='{ "fill": ["rgba(2, 164, 153,0.3)"],"stroke": ["rgba(2, 164, 153,0.8)"]}'
-                                            data-height="60">6,2,8,4,3,8,1,3,6,5,9,2,8,1,4,8,9,8,2,1</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
         </div>
         <!-- end row -->
+
+
+
+
+
+
         <div class="row">
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title mb-4">Gappers</h4>
+                        <h4 class="card-title mb-4">Таблица гэпперов за последний торговый день, все акции с ростом > 20%</h4>
                         <div class="table-responsive">
                             <table class="table table-hover table-centered table-nowrap mb-0">
                                 <thead>
@@ -247,9 +200,9 @@
                                 </thead>
                                 <tbody>
 
-                                  {% for gapper in gappers%}
+                                  {% for gapper in results%}
                                     <tr>
-                                        <th scope="row">{{ gapper.ticker_name }}</th>
+                                        <th scope="row">{{ gapper.ticker }}</th>
                                         <td>
                                             {{ gapper.open }}
                                         </td>
@@ -267,6 +220,29 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+        </div>
+        <!-- end row -->
+
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-12">Количество акций ценой ниже 1$, которые были выше 1$  3 месяца назад. Иллюстрация холодных/горячих циклов ликвидности. Выше число -> больше гэпперов, выше выносы. Ниже число -> менее вероятны шорт-сквизы, рынок не обладает динамикой.
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div>
+                                    <div id="chart-with-area4" class="ct-chart earning ct-golden-section">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                    </div>
+                </div>
+                <!-- end card -->
             </div>
 
         </div>

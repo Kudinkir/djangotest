@@ -8,7 +8,7 @@
         <title>{% block title %} {% endblock %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
-        <meta content="Themesbrand" name="author">
+        <meta content="www.robo.ru" name="author">
         <!-- App favicon -->
         <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
 
@@ -36,19 +36,19 @@
                         <div class="navbar-brand-box">
                             <a href="/" class="logo logo-dark">
                                 <span class="logo-sm">
-                                    <img src="{% static 'assets/images/logo-sm.png' %}" alt="" height="22">
+                                    <img src="{% static 'assets/images/logo.svg' %}" alt="" height="42">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{% static 'assets/images/logo-dark.png' %}" alt="" height="17">
+                                    <img src="{% static 'assets/images/logo.svg' %}" alt="" height="40">
                                 </span>
                             </a>
 
                             <a href="/" class="logo logo-light">
                                 <span class="logo-sm">
-                                    <img src="{% static 'assets/images/logo-sm.png' %}" alt="" height="22">
+                                    <img src="{% static 'assets/images/logo.svg' %}" alt="" height="42">
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="{% static 'assets/images/logo-light.png' %}" alt="" height="18">
+                                    <img src="{% static 'assets/images/logo.svg' %}" alt="" height="40">
                                 </span>
                             </a>
                         </div>
@@ -65,11 +65,11 @@
                     <div id="sidebar-menu">
                         <!-- Left Menu Start -->
                         <ul class="metismenu list-unstyled" id="side-menu">
-                            <li class="menu-title">Main</li>
+                            <li class="menu-title"></li>
                             <li>
                                 <a href="/" class="waves-effect">
                                     <i class="ti-home"></i><span class="badge rounded-pill bg-primary float-end"></span>
-                                    <span>Dashboard</span>
+                                    <span>Market breath</span>
                                 </a>
                             </li>
                         </ul>
@@ -92,9 +92,7 @@
                 <footer class="footer">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-12">
-                                © <script>document.write(new Date().getFullYear())</script> Veltrix<span class="d-none d-sm-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
-                            </div>
+                            <div class="col-12"><i>&copy; www.robo.ru </i></div>
                         </div>
                     </div>
                 </footer>
@@ -171,8 +169,171 @@
         <script src="{% static 'assets/libs/chartist/chartist.min.js' %}"></script>
         <script src="{% static 'assets/libs/chartist-plugin-tooltips/chartist-plugin-tooltip.min.js' %}"></script>
 
-        <script src="{% static 'assets/js/pages/dashboard.init.js' %}"></script>
+        <!--script src="{% static 'assets/js/pages/dashboard.init.js' %}"></script-->
+        <script>
 
+{% autoescape off %}
+    var dashdate=JSON.parse('{{finalresultsjson}}'); 
+{% endautoescape %}
+
+    var line1=Object.values(dashdate.count);
+    var line2=Object.values(dashdate.MA_5);
+    var line3=Object.values(dashdate.MA_15);
+    var labelsdsfull=Object.values(dashdate.date);
+    var labelsds = labelsdsfull.map((element,index) => {
+	if(index%2 === 0)
+          return element.trim().substr(-5, 2)+"\n"+ element.trim().substr(-2, 2);
+	return '';
+    });
+    const all =[].concat(line1,line2,line3);
+    const mina = (values) => values.reduce((x, y) => Math.min(x, y));
+    const maxa= (values) => values.reduce((x, y) => Math.max(x, y));
+    var minvalds=mina(all);
+    var maxvalds=maxa(all);
+    console.log(minvalds);
+new Chartist.Line("#chart-with-area",{
+    labels: labelsds,
+    series: [
+	{	
+	    name: 'count',
+	    data: line1
+	},
+	{
+	    name: 'MA_5',
+	    data: line2
+	},
+	{	
+	    name: 'MA_15',
+	    data:line3
+	}
+    ]
+},{
+    low: minvalds,
+    showArea: !0,
+    series: {
+    'count': {
+      showArea: false
+      ,showPoint: true
+      ,stroke: 'red'
+
+    },
+    'MA_5': {
+      showArea: false
+      ,showPoint: true
+      ,stroke: 'blue'
+    },
+    'MA_15': {
+      showArea: false
+      ,showPoint: true
+      ,stroke: 'yellow'
+    }},
+    scales: {
+      xAxes: [{
+        ticks: {
+          autoSkip: true,
+          maxRotation: 90,
+          minRotation: 90
+        }
+      }]
+    },
+    plugins: [Chartist.plugins.tooltip()]
+});
+
+
+
+
+{% autoescape off %}
+    dashdate=JSON.parse('{{s4json}}'); 
+{% endautoescape %}
+
+    line1=Object.values(dashdate.count);
+    line2=Object.values(dashdate.MA_5);
+    line3=Object.values(dashdate.MA_15);
+    labelsdsfull=Object.values(dashdate.date);
+    labelsds = labelsdsfull.map((element,index) => {
+	if(index%2 === 0)
+          return element.trim().substr(-5, 2)+"\n"+ element.trim().substr(-2, 2);
+	return '';
+    });
+    const all4 =[].concat(line1,line2,line3);
+    minvalds=mina(all);
+    maxvalds=maxa(all);
+    console.log(minvalds);
+    new Chartist.Line("#chart-with-area4",{
+    labels: labelsds,
+    series: [
+	{	
+	    name: 'count',
+	    data: line1
+	},
+	{
+	    name: 'MA_5',
+	    data: line2
+	},
+	{	
+	    name: 'MA_15',
+	    data:line3
+	}
+    ]
+},{
+    low: minvalds,
+    showArea: !0,
+    series: {
+    'count': {
+      showArea: false
+      ,showPoint: true
+      ,stroke: 'red'
+
+    },
+    'MA_5': {
+      showArea: false
+      ,showPoint: true
+      ,stroke: 'blue'
+    },
+    'MA_15': {
+      showArea: false
+      ,showPoint: true
+      ,stroke: 'yellow'
+    }},
+    scales: {
+      xAxes: [{
+        ticks: {
+          autoSkip: true,
+          maxRotation: 90,
+          minRotation: 90
+        }
+      }]
+    },
+    plugins: [Chartist.plugins.tooltip()]
+});
+
+
+
+
+
+
+
+
+
+
+
+var chart = new Chartist.Pie("#ct-donut",{
+    series: [54, 28, 17],
+    labels: [1, 2, 3]
+},{
+    donut: !0,
+    showLabel: !1,
+    plugins: [Chartist.plugins.tooltip()]
+});
+$(".peity-donut").each(function() {
+    $(this).peity("donut", $(this).data())
+}),
+$(".peity-line").each(function() {
+    $(this).peity("line", $(this).data())
+});
+
+
+	</script>
         <!-- <script src="{% static 'assets/js/app.js' %}"></script> -->
 
     </body>

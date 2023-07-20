@@ -163,3 +163,4 @@ tzdata==2023.3
 urllib3==2.0.3
 yarg==0.1.9
 zope.interface==6.0
+gunicorn==20.1.0

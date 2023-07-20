@@ -1,0 +1,16 @@
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+logrocket_env/
+media/
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+local_settings.py
+static/
+tmp/
+*.pyc
